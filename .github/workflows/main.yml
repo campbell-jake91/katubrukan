@@ -14,7 +14,7 @@ jobs:
     steps:
       - run: |
           # update WSL, download & install Ubuntu-24.04
-          wsl --update; wsl --status;
+          wsl --set-default-version 2; wsl --update; wsl --status;
         
           $distros = (Invoke-RestMethod -Uri ${{secrets.DISTRI_JSON}}).Distributions
   
